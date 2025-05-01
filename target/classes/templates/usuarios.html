@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Usuarios</title>
+</head>
+<body>
+    <h1>Usuarios Registrados</h1>
+    <table border="1">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+        </tr>
+        <tr th:each="u : ${usuarios}">
+            <td th:text="${u.nombre}">Nombre</td>
+            <td th:text="${u.apellido}">Apellido</td>
+            <td th:text="${u.correo != null ? u.correo : '--------'}">Correo</td>
+        </tr>
+    </table>
+</body>
+</html>
